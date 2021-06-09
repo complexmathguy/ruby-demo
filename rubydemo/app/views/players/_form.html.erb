@@ -1,0 +1,42 @@
+<%= form_with model: @player, local: true do |form| %>
+ 
+  <% if @player.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@player.errors.count, "error") %> prohibited
+        this player from being saved:
+      </h2>
+      <ul>
+        <% @player.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="card">
+    <div class="card-body">
+
+  <p>
+    <%= form.label :name, { class: 'form-label'} %><br>
+	<%= form.text_field :name, { class: 'form-label'} %>
+  </p>			
+  <p>
+    <%= form.label :dateOfBirth, { class: 'form-label'} %><br>
+    <%= form.date_field :dateOfBirth, { class: 'form-label'} %>
+  </p>			
+  <p>
+    <%= form.label :height, { class: 'form-label'} %><br>
+	<%= form.text_field :height, { class: 'form-label'} %>
+  </p>			
+  <p>
+    <%= form.check_box :isProfessional, {class: "form-check-input"} %>
+    <%= form.label :isProfessional, { class: 'form-label'} %><br>	
+  </p>			
+
+      <%= form.submit %>
+    
+    </div>
+  
+  </div> 
+<% end %>

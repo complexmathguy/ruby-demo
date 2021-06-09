@@ -1,0 +1,9 @@
+version: "3.9"
+
+services:
+
+  platform:
+    image: theharbormaster/ruby-demo:latest
+    ports:
+      - "3000:3000"
+

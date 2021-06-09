@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+    	<title>rubydemo</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+	    <%= csrf_meta_tags %>
+    	<%= csp_meta_tag %>
+	
+	    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
+  	</head>
+
+	<body>
+	
+	  	<div class="jumbotron text-center">
+			<h1>rubydemo</h1>
+  		</div>
+ 
+    	<div class="container">
+	   	
+	   		<div class="row">
+	    
+	     		<div class="col-lg-2">
+		   			<%= button_to 'Players', players_path, :method => :get,  :class => "btn btn-primary btn-lg"%>
+		   			<%= button_to 'Leagues', leagues_path, :method => :get,  :class => "btn btn-primary btn-lg"%>
+		   			<%= button_to 'Tournaments', tournaments_path, :method => :get,  :class => "btn btn-primary btn-lg"%>
+		   			<%= button_to 'Matchups', matchups_path, :method => :get,  :class => "btn btn-primary btn-lg"%>
+		   			<%= button_to 'Games', games_path, :method => :get,  :class => "btn btn-primary btn-lg"%>
+	     		</div>
+
+        		<!-- Page Content -->
+        		<div class="col-lg-10">
+					<%= yield %>
+        		</div>
+
+      		</div>   
+		
+		</div>
+		
+  </body>
+
+</html>
